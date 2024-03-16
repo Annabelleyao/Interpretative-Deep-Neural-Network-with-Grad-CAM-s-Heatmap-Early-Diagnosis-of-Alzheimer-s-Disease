@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<!-- https://www.w3schools.com/howto/howto_js_search_menu.asp -->
+<!-- ./static/style.css -->
+
+<head>
+    <link rel="stylesheet" href="./static/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson Text">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+</head>
+
+<body onload="document.getElementById('defaultOpen').click();" onload="myFunction()">
+    <div class="topblackbox">
+        <div id="title">Alzheimer's Disease Diagnosis</div>
+        <div id="searchbox">
+            <div><input type="text" placeholder="Search.." id="search"></div>
+            <img id="searchimg" src="./static/search.png" hspace="25" alt="searchpng">
+        </div>
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'tab1o')" id="defaultOpen">
+                <h3 class="tabtext">Early Detection</h3>
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'tab2o')">
+                <h3 class="tabtext">Background Information</h3>
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'tab3o')">
+                <h3 class="tabtext">About Us</h3>
+            </button>
+        </div>
+        <!-- Tab 1 Early Prediction -->
+        <div id="tab1o" class="tab-content">
+            <div class="filebackground">
+                <div class="paperbg">
+                    <div id="subtitle1ED">Upload an MRI image (JPG format)!</div>
+                    <div class="ED1vl"></div>
+                    <div id="arrowleft"></div>
+                    <div id="arrowright"></div>
+                    <div id="subtitle2ED">Early Prediction Result
+                        with Grad-CAM Interpretability Heatmap</div>
+                    <div id="buploadbox">
+                        <h3 id="ED1reqs">Requirements</h3>
+                        <ul id="reqslist">
+                            <li>128 X 128px</li>
+                            <li> 3.0 T T1-Weighted MRI Scan Image</li>
+                            <li>Axial or Coronal MRI scan</li>
+                        </ul>
+                        <input type="file" id="imageInput" accept="image/*" hspace="57px">
+                        <button id="uploadButton">Upload</button>
+                        <br>
+                        <img id="uploadedImage" style="max-width: 500px; max-height: 500px;" />
+                        <br>
+                    </div>
+                    <div id="ansbox">
+                        <h3 id="ansboxtitle">Output Explanation</h3>
+                        <p class="ansboxcontent">The software outputs a Heatmap and prediction result for whether or not
+                            the uploaded patient may potentially have Alzheimer's and to what degree. </p>
+                        <p class="ansboxcontent">The heatmap's warmer areas display areas that the machine learning
+                            model paid more attention to when making its decision.</p>
+                        <img id="resultimage" style="max-width: 500px; max-height: 500px;" />
+                        <h1 id="resultinfo"></h1>
+                    </div>
+                    <p id="disclaimer">Disclaimer: This software is not 100% accurate, and no result should be taken as
+                        absolute. Please use the heatmap and output prediction from the software only as reference when
+                        discussing with your doctor about potential issues. </p>
+                    <div id="firstgbox">
+                        <div id="dementiaprevtitle"><u>Dementia Prevention</u></div>
+                        <p id="dementiadesc">Are you worried about getting Alzheimer's disease? We have resources that
+                            can help you decrease your risk of getting dementia in the future.</p>
+                        <a href="" id="dementialink">Find Tips for Prevention</a>
+                    </div>
+                    <img src="./static/photo1fam.jpg" alt="photo1fam" id="photo1fam">
+                    <div id="secondgbox">
+                        <div id="dementiatreattitle"><u>Dementia Treatment</u></div>
+                        <p id="dementiatreatdesc">Treatment is incredibly important if you already
+                            have Alzheimer's. We have resources for you to
+                            reference and get help.</p>
+                        <a href="" id="dementiatreatlink">Find Resources</a>
+                    </div>
+                    <img src="./static/photo2fam.jpg" alt="photo2fam" id="photo2fam">
+                </div>
+            </div>
+        </div>
+        <!-- page 2 Background Information -->
+        <div id="tab2o" class="tab-content">
+            <div class="filebackground2">
+                <div class="paperbg2">
+                    <div class="image-container">
+                        <div id="blackfilter">
+                            <img src="./static/elderly.jpg" id="azbimg" alt="azbimg">
+                            <b><b>
+                                    <div class="AZtitle">What Is Alheimer's Disease?</div>
+                                </b></b>
+                        </div>
+                    </div>
+                    <div id="azgbox">
+                        <p class="adtextexpl">
+                            Alzheimer's disease is a disorder defined by the brain's deterioration, which results in the
+                            patient's loss of memory and thinking skills and, eventually, the ability to carry out even
+                            simple tasks. Due to this, they may undergo severe personality and behaviour changes.
+                        </p>
+                        <p class="adtextexpl">
+                            In recent years, Alzheimer's disease, a disease which targets the patient's cognitive
+                            abilities and causes dementia, has become increasingly prevalent among the older population.
+                            Over 6 million elderly in America are estimated to have Alzheimer's disease. However, more
+                            people than that experience Alzheimer's in their lives as friends or family of those with
+                            the disease. Clinical practice today diagnoses the disease through MRI imaging and cognitive
+                            tests based on individual doctor's personal knowledge and experience. Such strong reliance
+                            on experiential diagnosis can pose a huge challenge in the diagnosis of Alzheimer's disease
+                            at an early stage, when the symptoms of the disease are subtle and hard for clinicians to
+                            discern. As a result, many elderly today are only diagnosed with Alzheimer's when the
+                            disease has already progressed into a later, much obvious stage, significantly reducing the
+                            patients' chance of receiving effective treatments. Our website aims to help this problem
+                            through implementing a Machine learning code that can help with the diagnosis of this
+                            disease in its early stages and creating a heatmap that showcases its areas of diagnosis.
+                        </p>
+                        <p class="adtextexpl">
+                            There are many symptoms of Alzheimer's disease that one can also look for if they lack
+                            medical experience — changes in thinking, remembering, reasoning, and behavior — also known
+                            as dementia. As one of the most prominently seen symptoms of the disease, Alzheimer's is
+                            often also referred to as “dementia.” While there are other diseases and conditions that can
+                            also cause dementia, Alzheimer's is the most common cause in older adults.
+                        </p>
+                        <p class="adtextexpl">
+                            Contrary to the statistics shown, Alzheimer's disease is not a normal part of aging. It's
+                            caused by complex and intricate changes in the brain that happen years before symptoms
+                            appear and eventually lead to the loss of brain cells and neural connections. Some changes
+                            are age-related, such as shrinking, inflammation, blood vessel damage, and breakdown of
+                            energy within cells within the brain, which may harm neurons and affect other brain cells.
+                            Others are genetic and passed down by family members. At the very root, however, both those
+                            changes are gene-related, and tend to unfold at around 60-80 years old. In addition, many
+                            people with Down syndrome, a genetic condition, will develop Alzheimer's as they age and may
+                            begin to show symptoms in their 40s. There are also Health, environmental, and lifestyle
+                            factors that may play a role, such as exposure to pollution and radiation, heart disease,
+                            stroke, high blood pressure, diabetes, and obesity.
+                        </p>
+                        <p class="adtextexpl">
+                            Alzheimer's disease slowly gets worse over time but people with this disease progress at
+                            different rates and in several stages. Symptoms may get worse and then improve, but until an
+                            effective treatment for the disease itself is found, the person's ability will continue to
+                            decline over the course of the disease. However, there are surefire ways that can help slow
+                            down the progression of this disease. In the early stages, active brain usage through logic
+                            games, word problems, reading, teaching, or even exercise can help stimulate brain cells and
+                            neurons to continue working. This use of the neurons will help slow down their shrinking as
+                            they are repeatedly being stimulated and grown.
+                        </p>
+                        <p class="adtextexpl">
+                            Our website contains many resources for Alzheimer's disease. If you are concerned about
+                            memory problems or other symptoms, call a doctor. Our website's disease diagnosis heatmap
+                            may be of help in this process as well. If you or someone you know has recently been
+                            diagnosed, explore the resources on this website to learn more about the disease, care,
+                            support, and research.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page 3 About Us -->
+        <div id="tab3o" class="tab-content">
+            <div class="filebackground3">
+                <div class="paperbg3">
+                    <img src="./static/ADKNOW.png" id="logo" alt="adknow">
+                    <span id="myText">
+                        <p> We are an NGO organisation that is determined to help provide free and accessible healthcare
+                            to everyone who needs it. Founded in 2022-2023 by Annabelle Yao, we are actively
+                            participating in the interdisciplinary field between healthcare and AI, striving to create
+                            advanced tecchnology that can help with disease diagnosis in the medical field.</p>
+                            <div id="contactinfo">Contact Information:</div>
+                            <div>Email: ayhk2017@gmail.com </div>
+                            <div>Tel: +1 (646) 413 0184</div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('uploadButton').addEventListener('click', function () {
+            var file = document.getElementById('imageInput').files[0];
+            var formData = new FormData();
+            formData.append("file", file);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/uploader", true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var imageUrl = URL.createObjectURL(file);
+                    document.getElementById('uploadedImage').src = imageUrl;
+                    console.log(xhr)
+                    var text = xhr.responseText;
+                    result = text.split(':')[0]
+                    url = text.split(':')[1]
+                    document.getElementById('resultimage').src = url;
+                    document.getElementById('resultinfo').innerHTML = result
+                } else {
+                    console.error(xhr.statusText);
+                }
+            };
+
+            xhr.send(formData);
+        });
+        // function myFunction(){
+        //     fetch(request).then((response) => {
+        //     console.log(response);
+        //     response.json().then((data) => {
+        //         console.log(data);
+        //     }); 
+        //     document.write(response);
+        // });
+        // }
+        function openTab(evt, tabName) {
+            // 获取所有标签页内容并隐藏
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // 移除所有标签按钮的“激活”状态
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // 显示当前标签页并添加“激活”状态
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+
+</html>
