@@ -2,10 +2,7 @@ In recent years, Alzheimer’s disease, a disease that targets the patient’s c
 
 
 Through this research, we have made the following contributions:
-\begin{itemize}
-    \item We identified a new significant problem within the medical field
-    \item We applied a novel method using a state-of-the-art deep learning model (ViT) in Alzheimer's disease prediction and analyzed its ability in diagnosing early Alzheimer's given MRI scan images. 
-    \item We solved the challenge of lack of interpretability through applying the Grad-CAM method, allowing the
-    model to assist doctors to make decisions in real world diagnosis and applications.
-    % A deep learning framework for Alzheimer's disease diagnosis. outperform previous methods (accuracy,? )
-    \item We modelled and compared other traditional methods of disease prediction, showing the different results and drawing conclusions for applicability. 
+    1. We identified a new significant problem within the medical field
+    2. We applied a novel method using a state-of-the-art deep learning model (ViT) in Alzheimer's disease prediction and analyzed its ability in diagnosing early Alzheimer's given  MRI scan images. 
+    3. We solved the challenge of lack of interpretability through applying the Grad-CAM method, allowing the model to assist doctors in making decisions in real world diagnosis and applications.
+    4. We modelled and compared other traditional methods of disease prediction, showing the different results and drawing conclusions for applicability. 
